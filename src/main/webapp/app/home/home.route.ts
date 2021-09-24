@@ -43,7 +43,7 @@ export class EntrepriseResolve implements Resolve<IEntreprise> {
 
 export const HOME_ROUTE: Route = {
   path: 'entreprise',
-  component: HomeComponent,
+  component: EntrepriseComponent,
   //loadChildren: 'app/entities/entreprise/entreprise.module',
   data: {
     authorities: [],

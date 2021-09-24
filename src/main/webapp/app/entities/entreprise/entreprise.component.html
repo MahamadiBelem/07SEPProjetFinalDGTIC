@@ -93,18 +93,18 @@
             </div>
           </div>
   
-          <div class="card" style="box-shadow: 2px 2px 2px 2px; background-color: #E5E5E5 ; border-radius: 15px; width: 18rem;">
+          <!--div class="card" style="box-shadow: 2px 2px 2px 2px; background-color: #E5E5E5 ; border-radius: 15px; width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Entreprise</h5>
               <p class="card-text">Créer, Modifier, Désactiver entreprise.</p>
-              <!--a href="#" class="btn btn-primary">Gerer entreprise</a-->
+           
   
             <a class="dropdown-item" routerLink="entreprise" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" (click)="collapseNavbar()">
                 <fa-icon icon="book" [fixedWidth]="true"></fa-icon>
                 <span class="btn btn-primary">Gerer entreprise</span>
             </a>
             </div>
-          </div>
+          </div-->
   
           <div class="card" style="box-shadow: 2px 2px 2px 2px; background-color: #E5E5E5 ; border-radius: 15px; width: 18rem;">
             <div class="card-body">
@@ -276,12 +276,7 @@
   <br>
   <div>
           
-          <!--button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-entreprise" [routerLink]="['/entreprise/new']">
-              <fa-icon icon="plus"></fa-icon>
-              <span>
-              Nouveau
-              </span>
-          </button-->
+
      
   
       <jhi-alert-error></jhi-alert-error>
@@ -291,6 +286,9 @@
       <div class="alert alert-warning" id="no-result" *ngIf="entreprises?.length === 0">
           <span>No entreprises found</span>
       </div>
+
+      <br>
+      <br>
   
   
       <!--form class="form-inline pull-xs-right">
@@ -305,9 +303,17 @@
         <div class="col-4">
         <span>Rechercher</span> <input type="text" [(ngModel)]="filter" class="form-control">
         </div>
-    <div>
+      </div>
     <br>
    <br>
+   <button *jhiHasAnyAuthority="'ROLE_ADMIN'" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-entreprise" [routerLink]="['/entreprise/new']">
+    <fa-icon icon="plus"></fa-icon>
+    <span>
+    Nouveau
+    </span>
+</button>
+<br>
+<br>
       <div class="table-responsive" id="entities" *ngIf="entreprises && entreprises.length > 0">
           <table class="table table-bordered" aria-describedby="page-heading">
               <thead>
